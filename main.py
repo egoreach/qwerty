@@ -23,7 +23,7 @@ def extract_text(article):
     for page in reader.pages:
         text += page.extract_text()
 
-    return "summarize: " + text
+    return str("summarize: " + text).replace("\n", " ")
 
 
 article = st.file_uploader("Загрузите статью для суммаризации", type="pdf")
