@@ -29,4 +29,4 @@ def extract_text(article):
 article = st.file_uploader("Загрузите статью для суммаризации", type="pdf")
 if article:
     text = extract_text(article)
-    st.write(summarizer(text[:500]))
+    st.write(summarizer(text))
