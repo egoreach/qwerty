@@ -6,7 +6,7 @@ from transformers import AutoModelForSeq2SeqLM
 from transformers import pipeline
 
 
-checkpoint = "google-t5/t5-large"
+checkpoint = "google-t5/t5-base"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
@@ -29,5 +29,5 @@ def extract_text(article):
 article = st.file_uploader("Загрузите статью для суммаризации", type="pdf")
 if article:
     text = extract_text(article)
-    st.write("**Сокращенный вариант статьи:** \n")
-    st.write(summarizer(text[:2000])[0]['summary_text'])
+    temp = st.write("**Сокращенный вариант статьи:** \n")
+    temp.write(summarizer(text[:2000])[0]['summary_text'])
