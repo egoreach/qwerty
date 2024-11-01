@@ -29,5 +29,5 @@ def extract_text(article):
 article = st.file_uploader("Загрузите статью для суммаризации", type="pdf")
 if article:
     text = extract_text(article)
-    temp = st.write("**Сокращенный вариант статьи:** \n")
-    temp.write(summarizer(text[:2000])[0]['summary_text'])
+    st.write("**Сокращенный вариант статьи:** \n")
+    st.write_stream(summarizer(text[:2000])[0]['summary_text'])
