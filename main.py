@@ -10,7 +10,7 @@ checkpoint = "google-t5/t5-base"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
-summarizer = pipeline("summarization", model=model, tokenizer=tokenizer, device="cuda")
+summarizer = pipeline("summarization", model=model, tokenizer=tokenizer)
 
 
 st.title("Сириус.ИИ: задача от Биокада")
