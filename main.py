@@ -30,4 +30,4 @@ article = st.file_uploader("Загрузите статью для суммар�
 if article:
     text = extract_text(article)
     st.write("**Сокращенный вариант статьи:** \n")
-    st.write_stream(summarizer(text[:2000])[0]['summary_text'])
+    st.write(summarizer(text[:2000])[0]['summary_text'])
