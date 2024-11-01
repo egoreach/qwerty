@@ -6,7 +6,7 @@ from transformers import AutoModelForSeq2SeqLM
 from transformers import pipeline
 
 
-checkpoint = "google-t5/t5-large"
+checkpoint = "google-t5/t5-small"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
